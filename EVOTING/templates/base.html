@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="" type="image" rel="icon">
+
+<style>
+<style>
+ul.a {
+    list-style-type: circle;
+}
+body {
+  margin: 0;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #99FFFF;
+}
+
+.header {
+	background-color:  #001a00 ;
+  background-image: url("header.png") ;
+  color: white;
+  padding: 30px;
+  text-align: center;
+}
+
+.footer {
+
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  color: white;
+  bottom: 0;
+  width: 100%;
+  border-bottom: 1px solid ;
+}
+.footer1 {
+
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: white;
+  color: white;
+  bottom: 0;
+  width: 100%;
+  border-bottom: 1px solid ;
+}
+
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 3px;
+    background-color: #333;
+    box-sizing: border-box;
+
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+	 background-color: #333;
+	 color: black;
+
+}
+.column1 {
+    float: left;
+    width: 25%;
+    padding: 10px;
+    background-color: white;
+    box-sizing: border-box;
+	color: black;
+
+}
+
+.row1:after {
+    content: "";
+    display: table;
+    clear: both;
+	 background-color: white;
+
+}
+.ul1 {
+    list-style-type: none;
+}
+
+
+#la a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 4px 14px;
+    text-decoration: none;
+
+}
+
+la a:hover {
+    background-color: white;
+}
+
+#navbar {
+  overflow: hidden;
+  background-color: #66ffff;
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: #000066;
+  text-align: center;
+  width: 25%;
+  padding: 16px 0px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#navbar a:hover {
+  background-color: #ccffee;
+  color: black;
+}
+
+.content {
+background-color: #004d4d;
+color: white;
+  padding: 16px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Remote E-voting</h1>
+
+</div>
+
+<div id="navbar">
+  <a class="active" href="http://127.0.0.1:8000/">Home</a>
+  <a class="active" href="http://127.0.0.1:8000/voters">Voters</a>
+  <a class="active" href="http://127.0.0.1:8000/ECC/">ECC</a>
+  <a class="active" href="http://127.0.0.1:8000/contactus">Contact Us</a>
+</div>
+
+<div class="content">
+{% block content %}
+{% endblock %}
+  </div>
+<div class="footer">
+<div class="row">
+  <div class="column">
+    <h3>About Remote Voting</h3>
+	<ul class="ul1">
+    <li id="la">Electronic voting (also known as e-voting) refers to voting using electronic means to either aid or take care of the chores of casting and counting votes. Depending on the particular implementation, e-voting may use standalone electronic voting machines (also called EVM) or computers connected to the Internet
+</li></ul>
+  </div>
+  <div class="column">
+    <h3> Developed by</h3>
+	<ul class="ul1">
+    <li id="la">Bhavesh Khubnani </li>
+	<li id="la">Dhiren Motwani </li>
+	<li id="la">Gaurav Jethwani </li>
+	<li id="la"> Tanishq Bhatia</li>
+
+</ul>
+  </div>
+  <div class="column">
+    <h3>Registered Address</h3>
+    <pre align="center">
+Nirvachan Sadan, Ashoka Rd,
+Pandit Pant Marg Area, Sansad Marg Area,
+New Delhi, Delhi 110001.
+Phone: 011 2371 7391
+</pre>
+  </div>
+</div>
+</div>
+
+
+</body>
+<script>
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+</script>
+</html>

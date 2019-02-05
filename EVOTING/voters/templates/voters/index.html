@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% block content %}
+<script>
+window.onload = function () {
+
+var dps = []; // dataPoints
+var chart = new CanvasJS.Chart("chartContainer", {
+	title :{
+		text: "CURRENT STATS"
+	},
+	axisY: {
+		includeZero: false
+	},
+	data: [{
+		type: "line",
+		dataPoints: dps
+	}]
+});
+
+var xVal = 0;
+var updateInterval = 1000;
+var dataLength = 6; // number of dataPoints visible at any point
+
+var updateChart = function (count) {
+
+	-->count = count || 1
+
+	for (var j = 0; j < count-5; j++) {
+		xVal = xVal +  Math.round(5 + 0);
+		dps.push({
+			x: xVal,
+			y: {{yVal}}
+
+
+		});
+		xVal++;
+		dps.push({
+			x: xVal,
+			y: {{yVal1}}
+
+
+		});
+		xVal++;
+		dps.push({
+			x: xVal,
+			y: {{yVal2}}
+
+
+		});
+		xVal++;
+		dps.push({
+			x: xVal,
+			y: {{yVal3}}
+
+
+		});
+		xVal++;
+		dps.push({
+			x: xVal,
+			y: {{yVal4}}
+
+
+		});
+		xVal++;
+		dps.push({
+			x: xVal,
+			y: {{yVal5}}
+
+
+		});
+		xVal++;
+
+	}
+
+	if (dps.length > dataLength) {
+		-->dps.shift();
+	}
+
+	chart.render();
+};
+
+
+
+
+updateChart(dataLength);
+setInterval(function(){updateChart()}, updateInterval);
+
+}
+</script>
+<style >
+.button {
+	border: none;
+	padding: 10px 20px;
+	float: center;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	border-radius: 5px;
+	background-color: white;
+	color: black;
+	margin-left: 30%;
+}
+</style>
+<div id="chartContainer" style="height: 370px; width:100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<br><br>
+<a href="http://127.0.0.1:8000/voters/profile"><button class="button">PROFILE</button></a>
+<a href="http://127.0.0.1:8000/voters/vote"><button class="button">VOTE</button></a>
+{% endblock %}

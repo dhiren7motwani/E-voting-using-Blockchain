@@ -1,0 +1,38 @@
+
+    {% extends 'base.html' %}
+{% block content %}
+
+    <h1 align="center" ><u>CONTACT US</u></a></h1>
+<form>
+<b>Personal Details</b><br><br>
+<form action="process.aspx" method="post">
+            <div class="box">
+                <label for="FirstName">First Name</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" id="fname" name="FirstName" title="Enter your First Name"  placeholder="First name" required/>
+            </div> &nbsp;&nbsp;&nbsp;&nbsp;
+
+ <div class="box">
+                <label for="LastName">Last Name</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" id="lname" name="LastName" title="Please enter your Last Name"  placeholder="Last name" required/>
+            </div> &nbsp;&nbsp;&nbsp;&nbsp
+
+<div class="box">
+                <label for="email">Email</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="email" id="email" name="email"  title="Please enter your Email Address" placeholder="Email" required/>
+            </div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<div class="box">
+  {% csrf_token %}
+                <label for="VOTER ID">VOTER ID</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" id="VOTER ID"  title="VOTER ID" placeholder="VOTER ID" required/>
+            </div> &nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<textarea rows="24" cols="102" placeholder="Please type your query.. " required></textarea> &nbsp;&nbsp;&nbsp;&nbsp;
+<br><br>
+   <div>
+<input type="submit" value="Submit"><br></div>
+
+</form>
+
+
+    {% endblock %}

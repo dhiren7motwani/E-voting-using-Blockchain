@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method='POST'>
+
+
+
+<h2><b>Employee Id</b></h2> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="text" name="e_id"> <br><br>
+
+
+<h2><b>Password</b></h2> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="password" name="e_pass"> <br><br>
+
+{% csrf_token %}
+<style >
+.button {
+	border: none;
+	padding: 10px 20px;
+	float: center;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	border-radius: 5px;
+	background-color: white;
+	color: black;
+	margin-left: 30%;
+}
+</style>
+
+<input type="submit" class="button" value="Submit"><br>
+
+</form>
+{% endblock %}

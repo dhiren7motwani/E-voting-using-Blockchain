@@ -1,0 +1,96 @@
+	{% extends 'base.html' %}
+	{% block content %}
+	<style>
+	.header {
+	   display: block;
+	  padding: 30px;
+	  text-align: center;
+	}
+
+	table, td {
+		border: 1px solid black;
+		border-collapse: collapse;
+	}
+
+	 #td {
+		text-align: center;
+		padding: 20px;
+	}
+
+
+	</style>
+
+
+    <div>
+			<h2 align="center">VOTER'S APPROVAL LIST</h2>
+			<form>
+			<table style="width:100%">
+				<thead>
+					<th>FIRST NAME</th>
+					<th>LAST NAME</th>
+					<th>VOTER ID</th>
+					<th>LOCATION</th>
+					<th>STATUS</th>
+				</thead>
+			  <tr>
+				<td id="td">gaurav</td>
+				<td id="td">Jethwani</td>
+				<td id="td">123454</td>
+				<td id="td">JUHU</td>
+				<td id="td"><input type="checkbox" name="cid" value="1">APPROVED</td>
+			  </tr>
+			  <tr>
+				<td id="td">BHAVESH</td>
+				<td id="td">khubnani</td>
+				<td id="td">465845316</td>
+				<td id="td">Thane</td>
+				<td id="td"><input type="checkbox" name="cid" value="1">APPROVED</td>
+			  </tr>
+
+			  <tr>
+				<td id="td">Dhiren</td>
+				<td id="td">Motwani</td>
+				<td id="td">984165</td>
+				<td id="td">Mulund</td>
+				<td id="td"><input type="checkbox" name="cid" value="1">APPROVED</td>
+			  </tr>
+
+			  <tr>
+				<td id="td">Tanishq</td>
+				<td id="td">Bhatia</td>
+				<td id="td">3214532</td>
+				<td id="td">Thane</td>
+				<td id="td"><input type="checkbox" name="cid" value="1">APPROVED</td>
+			  </tr>
+			 
+
+
+			</table>
+			<br>
+			<style >
+			.button {
+				border: none;
+				padding: 10px 20px;
+				float: center;
+				text-align: center;
+				text-decoration: none;
+				display: inline-block;
+				font-size: 16px;
+				border-radius: 5px;
+				background-color: white;
+				color: black;
+				margin-left: 35%;
+			}
+			</style>
+
+			<div>
+			<input type="submit" class="button" value="Submit">
+			</div>
+			<div align="center">
+			</div>
+			</form>
+			<br><br>
+			<a href="http://127.0.0.1:8000/ECC/profile/"><button class="button" >PROFILE</button></a>
+
+			</div>
+{% endblock %}

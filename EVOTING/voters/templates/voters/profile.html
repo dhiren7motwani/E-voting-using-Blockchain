@@ -1,0 +1,75 @@
+
+{% extends 'base.html' %}
+{% block content  %}
+
+<style>
+.header {
+   display: block;
+  padding: 30px;
+  text-align: center;
+}
+
+table, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+ td {
+    padding:10px;
+}
+
+</style>
+<div class="header">
+<h1><b><u>VOTER'S PROFILE</u></b></h1>
+</div>
+
+<table style="width:100%">
+  <tr>
+    <td>FIRST NAME</td>
+    <td>{{ fn }}</td>
+
+  </tr>
+  <tr>
+    <td>LAST NAME</td>
+    <td>{{ ln }}</td>
+
+  </tr>
+
+  <tr>
+    <td>AGE</td>
+    <td>{{ age }}</td>
+
+  </tr>
+
+  <tr>
+    <td>GENDER</td>
+    <td>{{ gender }}</td>
+
+  </tr>
+  <tr>
+    <td>VOTER ID</td>
+    <td>{{ voter_id }}</td>
+
+  </tr>
+
+  <tr>
+    <td>PAN ID</td>
+    <td>{{ pan_id }}</td>
+
+  </tr>
+
+  <tr>
+    <td>MOBILE NUMBER</td>
+    <td>{{ phone_number }}</td>
+
+  </tr>
+
+  <tr>
+    <td>CONSTITUENCY</td>
+    <td>{{ location }}</td>
+
+  </tr>
+
+
+</table>
+{% endblock %}

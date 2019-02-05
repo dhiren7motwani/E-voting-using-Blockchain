@@ -1,0 +1,113 @@
+
+{% extends 'base.html' %}
+{% block content  %}
+
+<style>
+.header {
+   display: block;
+  padding: 30px;
+  text-align: center;
+}
+
+table, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+ #td {
+    text-align: center;
+    padding: 20px;
+}
+
+</style>
+<h1 class="header"><u>CENTRAL ELECTIONS</u></h1>
+<h2 class="header"><u>VOTING FORM</u></h2>
+<form method="POST">
+
+{% csrf_token %}
+<H3 class="header"><b><u>PLEASE SELECT YOUR CHOICE</u></b></H3><br><br>
+
+
+
+
+<table style="width:100%">
+  <tr>
+    <td id="td">BHARTIYA JANTA PARTY</td>
+
+    <td id="td"><input type="radio" name="cid" value="0">BJP</td>
+  </tr>
+  <tr>
+    <td id="td">INDIAN NATIONAL CONGRESS</td>
+
+    <td id="td"><input type="radio" name="cid" value="1">INC</td>
+
+  </tr>
+
+  <tr>
+    <td id="td">BAHUJAN SAMAJ PARTY</td>
+
+    <td id="td"><input type="radio" name="cid" value="2">BSM</td>
+
+  </tr>
+
+  <tr>
+<td id="td">AAM AADMI PARTY</td>
+
+    <td id="td"><input type="radio" name="cid" value="3">AAP</td>
+
+  </tr>
+  <tr>
+    <td id="td">OTHERS</td>
+
+    <td id="td"><input type="radio" name="cid" value="4">OTH</td>
+
+  </tr>
+
+  <tr>
+    <td id="td" >NONE OF THE ABOVE </td>
+
+    <td id="td"><input type="radio" name="cid" value="5">NOTA</td>
+
+  </tr>
+
+
+</table>
+<br>
+<style >
+.button {
+	border: none;
+	padding: 10px 20px;
+	float: center;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	border-radius: 5px;
+	background-color: white;
+	color: black;
+	margin-left: 15%;
+}
+</style>
+
+<div align="center">
+<input type="submit" class="button" onclick="abcd()"value="Submit"><br>
+</div>
+
+</form>
+<script type="text/javascript">
+function abcd(){
+const Url='http://127.0.0.1:5000/add_transaction/'
+const User={voter_id: '123',
+              constituency: 'mulund',
+              candidate_Id: '3',
+              flag: '1'}
+axios(
+  {
+    method:'post',
+    url:Url,
+    data:{User}
+  }
+).then(data=>console.log(data))
+}
+</script>
+{% endblock %}

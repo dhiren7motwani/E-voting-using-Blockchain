@@ -1,0 +1,50 @@
+{% extends 'base.html'%}
+{% block content %}
+
+<form action="" method="POST">
+
+<b>First Name</b> &nbsp;&nbsp;&nbsp;&nbsp;
+<input type="text" name="fname"> <br><br>
+<b>Last Name</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="text" name="lname"> <br><br><br>
+<b>Gender</b>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="gender" value="male">Male<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="gender" value="female">Female<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="gender" value="other">Other<br>
+</br></br>
+<b>Mobile No.</b> &nbsp;&nbsp;&nbsp;&nbsp;
+<input type="tel" name="m_no"> <br><br>
+<b>AGE</b> &nbsp;&nbsp;&nbsp;&nbsp;
+<input type="number" name="age" value=""><br><br>
+<b>Voter ID</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="text" name="vid"> <br><br>
+<b>PAN ID</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="text" name="pid"> <br><br>
+<b>constituency</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="text" name="loc"> <br><br>
+
+{% csrf_token %}
+<b>Password</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="password" name="psw"> <br><br>
+
+<style >
+.button {
+	border: none;
+	padding: 15px 32px;
+	float: center;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	border-radius: 5px;
+	background-color: white;
+	color: black;
+	margin-left: 30%;
+}
+</style>
+
+
+<input type="submit" class="button" value="Submit"><br>
+
+</form>
+{% endblock %}
